@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('system_settings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('company_id')->nullable()->index();
+            $table->foreignId('company_id')->nullable()->constrained()->nullOnDelete();
             $table->string('system_name')->nullable();
             $table->boolean('setup_completed')->default(false);
             $table->unsignedTinyInteger('setup_step')->default(0);
