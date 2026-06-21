@@ -3,6 +3,22 @@
 use Illuminate\Support\Str;
 use Pdo\Mysql;
 
+// Auto-create SQLite database file if it doesn't exist
+if (($connection = env('DB_CONNECTION', 'sqlite')) === 'sqlite') {
+    $database = env('DB_DATABASE', database_path('database.sqlite'));
+    if (! str_contains((string) $database, ':memory')
+        && ! str_contains((string) $database, '?mode=memory')
+        && ! str_contains((string) $database, '&mode=memory')) {
+        $directory = dirname((string) $database);
+        if (! is_dir($directory)) {
+            mkdir($directory, 0755, true);
+        }
+        if (! file_exists((string) $database)) {
+            touch((string) $database);
+        }
+    }
+}
+
 return [
 
     /*
