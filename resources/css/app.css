@@ -2,10 +2,24 @@
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
+@source '../js/pages/**/*.vue';
+@source '../js/components/**/*.vue';
 
 @theme inline {
     --font-sans:
         Instrument Sans, ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
+
+    --color-axion-50: #f0f5ff;
+    --color-axion-100: #e0ebff;
+    --color-axion-200: #c7d9ff;
+    --color-axion-300: #a3beff;
+    --color-axion-400: #7a9bff;
+    --color-axion-500: #5575ff;
+    --color-axion-600: #3b52e8;
+    --color-axion-700: #2d3fc6;
+    --color-axion-800: #26339e;
+    --color-axion-900: #222e7d;
+    --color-axion-950: #151842;
 }

@@ -11,7 +11,7 @@ class CheckSystemSetup
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if ($this->isSetupPath($request)) {
+        if ($this->isExcludedPath($request)) {
             return $next($request);
         }
 
@@ -26,8 +26,9 @@ class CheckSystemSetup
         return $next($request);
     }
 
-    protected function isSetupPath(Request $request): bool
+    protected function isExcludedPath(Request $request): bool
     {
-        return $request->is('setup') || $request->is('setup/*');
+        return $request->is('setup') || $request->is('setup/*')
+            || $request->is('/') || $request->routeIs('home');
     }
 }
