@@ -40,7 +40,7 @@ Axion aims to become the standard open-source platform for service business mana
 | Styling | Tailwind CSS 4 |
 | Build | Vite 8 |
 | Database | MySQL (SQLite for development) |
-| Auth | Laravel built-in |
+| Auth | Laravel Fortify |
 | Authorization | Spatie Laravel Permission |
 | Testing | Pest 4, PHPStan (level 7) |
 | Code Quality | Laravel Pint, ESLint, Prettier, vue-tsc |
@@ -313,7 +313,7 @@ test(inventory): add stock movement tests
 - [x] Laravel 13 + Vue 3 + Inertia.js scaffold
 - [x] TypeScript + Tailwind CSS 4 setup
 - [x] CI pipeline with Pest, PHPStan, Pint, ESLint, Prettier
-- [ ] Authentication (register, login, password reset)
+- [x] Authentication (register, login, password reset) — Laravel Fortify
 - [ ] User roles and permissions (Spatie)
 - [ ] Company settings module
 - [ ] Dashboard
